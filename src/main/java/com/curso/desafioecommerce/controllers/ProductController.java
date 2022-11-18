@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController()
 @RequestMapping(value = "/products")
@@ -21,7 +22,7 @@ public class ProductController {
 
     @GetMapping(value = "/{id}")
     public Product findById(@PathVariable Long id) {
-        return repository.findById(id).get();
+        return repository.findById(id).orElse(null);
     }
 
     @PostMapping
@@ -52,5 +53,10 @@ public class ProductController {
                     return ResponseEntity.ok().build();
                 }
         ).orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/category/{name}")
+    public List<Product> listByCategory(@PathVariable String name) {
+        return repository.findAllByCategory_Name(name);
     }
 }

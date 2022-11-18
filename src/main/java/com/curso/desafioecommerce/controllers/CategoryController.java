@@ -15,8 +15,11 @@ public class CategoryController {
     private CategoryRepository repository;
 
     @GetMapping
-    public List<Category> findAll() {
-        return repository.findAll();
+    public List<String> findAll() {
+        return repository.findAll()
+                .stream()
+                .map(Category::getName)
+                .toList();
     }
 
     @PostMapping
