@@ -2,13 +2,15 @@ package com.curso.desafioecommerce.controllers;
 
 import com.curso.desafioecommerce.entities.Buyer;
 import com.curso.desafioecommerce.repositories.BuyerRepository;
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 import java.util.List;
 @RestController
+@Api(tags = { "Buyers" })
 @RequestMapping(value = "/buyers")
 public class BuyerController {
     @Autowired

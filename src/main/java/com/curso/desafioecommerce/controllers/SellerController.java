@@ -2,6 +2,8 @@ package com.curso.desafioecommerce.controllers;
 
 import com.curso.desafioecommerce.entities.Seller;
 import com.curso.desafioecommerce.repositories.SellerRepository;
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@Api(tags = { "Sellers" })
 @RequestMapping(value = "/sellers")
 public class SellerController {
     @Autowired
