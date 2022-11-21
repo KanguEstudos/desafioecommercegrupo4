@@ -13,7 +13,7 @@ public class SpringFoxConfig {
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.curso.desafioecommerce.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
