@@ -5,9 +5,9 @@ import com.curso.desafioecommerce.repositories.BuyerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "/buyers")
 public class BuyerController {
