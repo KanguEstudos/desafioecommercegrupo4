@@ -40,7 +40,7 @@ public class CategoryController {
         return repository.findById(id).map(
                 map -> {
                     map.setName(category.getName());
-                    Category saved = repository.save(category);
+                    Category saved = repository.save(map);
                     return ResponseEntity.ok().body(saved);
                 }
         ).orElse(ResponseEntity.notFound().build());
