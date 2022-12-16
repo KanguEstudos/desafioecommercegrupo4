@@ -1,7 +1,7 @@
-package com.curso.desafioecommerce.controllers;
+package com.curso.categorymanager.controllers;
 
-import com.curso.desafioecommerce.entities.Category;
-import com.curso.desafioecommerce.repositories.CategoryRepository;
+import com.curso.categorymanager.entities.Category;
+import com.curso.categorymanager.repositories.CategoryRepository;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

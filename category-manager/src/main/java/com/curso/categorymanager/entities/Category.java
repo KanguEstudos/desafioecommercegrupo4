@@ -1,4 +1,4 @@
-package com.curso.desafioecommerce.entities;
+package com.curso.categorymanager.entities;
 
 import javax.persistence.*;
 

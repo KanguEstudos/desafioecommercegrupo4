@@ -1,6 +1,6 @@
-package com.curso.desafioecommerce.repositories;
+package com.curso.categorymanager.repositories;
 
-import com.curso.desafioecommerce.entities.Category;
+import com.curso.categorymanager.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

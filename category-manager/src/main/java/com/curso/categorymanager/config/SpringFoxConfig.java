@@ -1,4 +1,4 @@
-package com.curso.desafioecommerce.config;
+package com.curso.categorymanager.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ public class SpringFoxConfig {
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.curso.desafioecommerce.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.curso.categorymanager.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

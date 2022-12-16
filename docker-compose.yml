@@ -1,6 +1,66 @@
 version: "3.8"
 
 services:
+  user-manager:
+    build: ./user-manager
+    ports:
+      - "8081:8081"
+    networks:
+      - mysql
+      - microservices
+    depends_on:
+      - java-mysql
+
+  buyer-manager:
+    build: ./buyer-manager
+    ports:
+      - "8082:8082"
+    networks:
+      - mysql
+      - microservices
+    depends_on:
+      - java-mysql
+
+  seller-manager:
+    build: ./seller-manager
+    ports:
+      - "8083:8083"
+    networks:
+      - mysql
+      - microservices
+    depends_on:
+      - java-mysql
+
+  product-manager:
+    build: ./product-manager
+    ports:
+      - "8084:8084"
+    networks:
+      - mysql
+      - microservices
+    depends_on:
+      - java-mysql
+
+  category-manager:
+    build: ./category-manager
+    ports:
+      - "8085:8085"
+    networks:
+      - mysql
+      - microservices
+    depends_on:
+      - java-mysql
+
+  sale-service:
+    build: ./sale-service
+    ports:
+      - "8086:8086"
+    networks:
+      - mysql
+      - microservices
+    depends_on:
+      - java-mysql
+
   java-mysql:
     image: mysql
     container_name: java-mysql
@@ -14,6 +74,12 @@ services:
       - "${MYSQL_EXTERNAL_PORT}:3306"
     volumes:
       - java-data:/var/lib/mysql
+    networks:
+      - mysql
 
 volumes:
   java-data:
+
+networks:
+  mysql:
+  microservices:
